@@ -1,0 +1,1 @@
+Alt = Npm.require('alt');
