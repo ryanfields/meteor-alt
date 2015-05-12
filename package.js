@@ -10,7 +10,13 @@ Npm.depends({
 });
 
 Package.onUse(function(api) {
-  api.add_files('index.js', 'client');
-  api.add_files('index.js', 'server');
-  api.export('Alt', 'server');
+  api.addFiles([
+    '.npm/package/node_modules/alt/dist/alt-with-addons.js',
+    'export.js'
+  ], 'client');
+
+  api.addFiles('index.js', 'server');
+
+  api.export('Alt');
+  api.export('AltContainer');
 });
